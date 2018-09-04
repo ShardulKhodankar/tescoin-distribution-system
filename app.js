@@ -16,6 +16,6 @@ app.get('/getCoins', (req, resp)=> {
 
 app.get('/', (req, resp)=>{ 
   // console.log(__dirname);
-  resp.sendFile(path.join(__dirname + '/index2.html'));
+  resp.sendFile(path.join(__dirname + '/index.html'));
 })
 app.listen(port, () => console.log(`Listening on port ${port}`));
