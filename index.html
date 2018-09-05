@@ -18,32 +18,22 @@
       var requestData = $('#search').val();
       var requestData2 = $('#search2').val();
 			var resultElement = $('#response');
-			alert('clicked! ====== ');
-      alert(requestData);
-      alert(requestData2);
+			alert(requestData);
+			alert(requestData2);
 			$.ajax({
 				url : 'http://localhost:9000/getCoins',
-				method : 'get',
+				method : 'GET',
 				data : {
 					amount : requestData,
 					address: requestData2
 				},
 				success : function(data) {
-					alert(data);
-					console.log(data);
-					$('#Poster').attr('src', data.Poster);
-					$('#Title').html(data.Title);
-					$('#Type').html(data.Type);
-					$('#imdbRating').html(data.imdbRating);
-					$('#Released').html(data.Released);
-					$('#imdbId').html(data.imdbID);
-					$('#Add').fadeIn(1000);
-					$('#table').fadeIn(1000);
-					x="id="+data.imdbID+"&releasedDate="+data.Released+"&userId="+sessionData+"&name="+data.Title+"&poster="+data.Poster;
+					alert('SUCCESS!!!', data);
 				},
         error: function(err){
-          alert(err);
-        }
+					console.warn('ERROR : ', err);
+					alert('ERROR!!!', err)
+				}
 			})
 		})
 	})

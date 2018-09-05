@@ -5,13 +5,16 @@ const app = express();
 const port = process.env.PORT || 9000;
 
 // this will route the coming request to route file.
-app.get('/getCoins', (req, resp)=> {
-  console.log('------------------',req);
-  route(req).then((results)=> {
-    console.log('----RESPONSE FROM TRANSACTION----', results);
-    resp.setHeader('Content-Type', 'application/json');
-    resp.send(results);
-  })
+app.get('/getCoins', async (req, resp)=> {
+  const finalResponse = await route(req);
+  console.log('---------------------',finalResponse);
+  resp.send(JSON.stringify(finalResponse));
+  
+  // route(req).then((results)=> {
+  //   console.log('----RESPONSE FROM TRANSACTION----', results);
+  //   resp.setHeader('Content-Type', 'application/json');
+  //   resp.status(400).send.results;
+  // })
 })
 
 app.get('/', (req, resp)=>{ 
