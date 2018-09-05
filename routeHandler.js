@@ -7,7 +7,7 @@ module.exports = async (req) => {
   try{
     const amount = Number(req.query.amount) * 1E8;
     const address = req.query.address;
-    console.log('Amount Requested: ',amount * 1E8)
+    console.log('Amount Requested: ',req.query.amount);
     if(!amount || !address){
       return {
         message: "MISSING INPUTS Amount and/or Address!"
@@ -24,6 +24,7 @@ module.exports = async (req) => {
     if(amount<mywalletBalance){
       const finalResponse = await (sendBitcoin(amount,address));
       if(finalResponse instanceof Error){
+        console.log('-------------------------------')
         return {
           message: 'ERROR WHILE SENDING COINS!'
         }

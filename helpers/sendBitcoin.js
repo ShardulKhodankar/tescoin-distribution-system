@@ -17,7 +17,7 @@ const sendBitcoin = async (amount,address) =>{
     return sendCoinsResponse;
   }
   catch(error){
-    console.error('ERROR INSIDE sendBitcoin: ',error);
+    // console.error('ERROR INSIDE sendBitcoin: ',error);
     return error;
   }
 

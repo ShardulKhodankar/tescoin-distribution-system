@@ -16,7 +16,7 @@ const checkMyWalletBalance = async () =>{
     const getWalletResponse = await bitgo.coin('tbtc').wallets().get(getWalletPayload);
     const maximumSpendableResponse = await getWalletResponse.maximumSpendable(params);
     console.log('Response from maximumSpendable: ',maximumSpendableResponse.maximumSpendable)
-    return maximumSpendableResponse.maximumSpendable;
+    return Number(maximumSpendableResponse.maximumSpendable);
   }
   catch(error){
     console.log('ERROR INSIDE checkMyWalletBalance: ',error);

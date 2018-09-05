@@ -28,11 +28,10 @@
 					address: requestData2
 				},
 				success : function(data) {
-					alert('SUCCESS!!!', data);
+					alert('SUCCESS!!! '+ JSON.stringify(data));
 				},
         error: function(err){
-					console.warn('ERROR : ', err);
-					alert('ERROR!!!', err)
+					alert('ERROR!!!' + JSON.stringify(err));
 				}
 			})
 		})
