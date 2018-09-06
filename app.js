@@ -5,6 +5,7 @@ const app = express();
 const port = process.env.PORT || 9000;
 
 // this will route the coming request to route file.
+
 app.get('/getCoins', async (req, resp)=> {
   const finalResponse = await route(req);
   console.log('---------------------',finalResponse);
@@ -21,4 +22,5 @@ app.get('/', (req, resp)=>{
   // console.log(__dirname);
   resp.sendFile(path.join(__dirname + '/index.html'));
 })
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
