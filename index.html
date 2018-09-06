@@ -18,8 +18,6 @@
       var requestData = $('#search').val();
       var requestData2 = $('#search2').val();
 			var resultElement = $('#response');
-			alert(requestData);
-			alert(requestData2);
 			$.ajax({
 				url : 'http://localhost:9000/getCoins',
 				method : 'GET',
@@ -27,11 +25,8 @@
 					amount : requestData,
 					address: requestData2
 				},
-				success : function(data) {
-					alert('SUCCESS!!! '+ JSON.stringify(data));
-				},
         error: function(err){
-					alert('ERROR!!!' + JSON.stringify(err));
+					alert('Transaction Received!!!');
 				}
 			})
 		})
