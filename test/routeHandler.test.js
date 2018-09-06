@@ -1,10 +1,10 @@
-describe('Test routeHandler', () =>{
-  test('Testing with address null', async (done)=>{
+describe('Test routeHandler', () => {
+  test('Testing with address null', async (done) => {
     const bitgoJs = require('bitgo');
-    const bitgo = new bitgoJs.BitGo({env: 'test', accessToken: process.env.accessToken});
+    const bitgo = new bitgoJs.BitGo({ env: 'test', accessToken: process.env.accessToken });
     const routeHandler = require('../routeHandler');
     const payload = {
-      query:{
+      query: {
         address: '',
         amount: 3000
       }
@@ -16,12 +16,12 @@ describe('Test routeHandler', () =>{
     });
     done();
   })
-  test('Testing with higher amount', async (done)=>{
+  test('Testing with higher amount', async (done) => {
     const bitgoJs = require('bitgo');
-    const bitgo = new bitgoJs.BitGo({env: 'test', accessToken: process.env.accessToken});
+    const bitgo = new bitgoJs.BitGo({ env: 'test', accessToken: process.env.accessToken });
     const routeHandler = require('../routeHandler');
     const payload = {
-      query:{
+      query: {
         address: '2N2AZsdKfna6J9pxj91hs7A1jJAqrJiMxir',
         amount: 3000
       }
@@ -33,12 +33,12 @@ describe('Test routeHandler', () =>{
     });
     done();
   })
-  test('Testing with invalid address', async (done)=>{
+  test('Testing with invalid address', async (done) => {
     const bitgoJs = require('bitgo');
-    const bitgo = new bitgoJs.BitGo({env: 'test', accessToken: process.env.accessToken});
+    const bitgo = new bitgoJs.BitGo({ env: 'test', accessToken: process.env.accessToken });
     const routeHandler = require('../routeHandler');
     const payload = {
-      query:{
+      query: {
         address: '123',
         amount: 0.001
       }

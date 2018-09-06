@@ -1,8 +1,8 @@
 const bitgoJs = require('bitgo');
-const bitgo = new bitgoJs.BitGo({env: 'test', accessToken: process.env.accessToken});
+const bitgo = new bitgoJs.BitGo({ env: 'test', accessToken: process.env.accessToken });
 
-const sendBitcoin = async (amount,address) =>{
-  try{
+const sendBitcoin = async (amount, address) => {
+  try {
     const getWalletPayload = {
       id: process.env.walletId
     }
@@ -13,10 +13,10 @@ const sendBitcoin = async (amount,address) =>{
       walletPassphrase: process.env.walletPassword
     }
     const sendCoinsResponse = await getWalletResponse.send(sendCoinsPayload);
-    console.log('Response from sendCoins: ',sendCoinsResponse);
+    console.log('Response from sendCoins: ', sendCoinsResponse);
     return sendCoinsResponse;
   }
-  catch(error){
+  catch (error) {
     // console.error('ERROR INSIDE sendBitcoin: ',error);
     return error;
   }

@@ -3,5 +3,6 @@ const sendBitCoin = require('./sendBitcoin');
 
 module.exports = {
   checkMyWalletBalance,
-  sendBitCoin
+  sendBitCoin,
 }
+;

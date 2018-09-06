@@ -1,7 +1,7 @@
 const bitgoJs = require('bitgo');
-const bitgo = new bitgoJs.BitGo({env: 'test', accessToken: process.env.accessToken});
-const checkMyWalletBalance = async () =>{
-  try{
+const bitgo = new bitgoJs.BitGo({ env: 'test', accessToken: process.env.accessToken });
+const checkMyWalletBalance = async () => {
+  try {
     const address = process.env.walletAddress;
 
     const getWalletPayload = {
@@ -15,14 +15,14 @@ const checkMyWalletBalance = async () =>{
 
     const getWalletResponse = await bitgo.coin('tbtc').wallets().get(getWalletPayload);
     const maximumSpendableResponse = await getWalletResponse.maximumSpendable(params);
-    console.log('Response from maximumSpendable: ',maximumSpendableResponse.maximumSpendable)
+    console.log('Response from maximumSpendable: ', maximumSpendableResponse.maximumSpendable)
     return Number(maximumSpendableResponse.maximumSpendable);
   }
-  catch(error){
-    console.log('ERROR INSIDE checkMyWalletBalance: ',error);
+  catch (error) {
+    console.error('ERROR INSIDE checkMyWalletBalance: ', error);
     return error;
   }
- 
+
   // return bitgo.coin('tbtc').wallets().get(getWalletPayload)
   // .then(wallet=>{
   //   return wallet.maximumSpendable(params)

@@ -24,7 +24,6 @@ module.exports = async (req) => {
     if(amount<mywalletBalance){
       const finalResponse = await (sendBitcoin(amount,address));
       if(finalResponse instanceof Error){
-        console.log('-------------------------------')
         return {
           message: 'ERROR WHILE SENDING COINS!'
         }
