@@ -8,7 +8,7 @@ const port = process.env.PORT || 9000;
 app.get('/getCoins', async (req, resp)=> {
   const finalResponse = await route(req);
   console.log('---------------------',finalResponse);
-  resp.send(JSON.stringify(finalResponse));
+  resp.send(finalResponse);
   
   // route(req).then((results)=> {
   //   console.log('----RESPONSE FROM TRANSACTION----', results);
